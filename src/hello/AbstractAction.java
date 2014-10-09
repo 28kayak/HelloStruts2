@@ -1,6 +1,6 @@
 package hello;
 
-import java.util.Map;
+import java.util.*;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -13,13 +13,14 @@ public class AbstractAction extends ActionSupport implements ServletResponseAwar
 {
 	private static final long serialVersionUID = 1L;
 	public HttpServletResponse response;
+	@SuppressWarnings("rawtypes")
 	public Map sessionMap;
 	
 	public void setServletResponse(HttpServletResponse response)
 	{
 		this.response = response;
 	}
-	public void setSession(Map sessionMap)
+	public void setSession(@SuppressWarnings("rawtypes") Map sessionMap)
 	{
 		this.sessionMap = sessionMap;
 	}
